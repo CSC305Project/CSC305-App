@@ -108,4 +108,4 @@ Signatures:
 - Selena Cabral
 - Roland Gboley
 - Jack Marcello
-- Noah Vario
+- Ndoumbe Ndoye
