@@ -107,5 +107,5 @@ community.
 Signatures:
 - Selena Cabral
 - Roland Gboley
-- Noah Vario
+- Jack Marcello
 - Ndoumbe Ndoye
