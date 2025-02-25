@@ -107,3 +107,4 @@ community.
 Signatures:
 - Selena Cabral
 - Roland Gboley
+- Noah Vario
