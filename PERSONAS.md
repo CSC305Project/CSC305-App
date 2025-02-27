@@ -5,3 +5,5 @@ Web Developer: https://docs.google.com/presentation/d/1am3_D70-6ONq8uzbRG_sTwOO4
 Busy Professional: https://docs.google.com/presentation/d/1UDp2Ymhj2HxZhChmtGqfaq4KimDcDwtVca7dybXW3rQ/edit?usp=sharing
 
 High Schooler : https://docs.google.com/presentation/d/1ngGPfFWlgGeF9KLtpmFyZJ5yfDurobRNhPIxZttGn0g/edit?usp=sharing
+
+Remote Product Manager: https://docs.google.com/presentation/d/18lX653jlThP55mTwxfZvW-A9MOo_t6yzRgXCKsqU2JY/edit?usp=sharing
