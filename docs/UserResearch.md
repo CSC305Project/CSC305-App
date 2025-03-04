@@ -16,3 +16,10 @@ Observation 4:
   Observation Statement: Over 50% of responders are currently saving for something on their horizon
   Supporting Data: We see that often people are saving for a car, rent, house, with a couple saying they invest, or are saving for retirement 
   Team Action (if any): We can focus outselves more at the importance of investing and saving, and how much they could benefit. Also make it intuitive to track your progress towards saving for an item and give reccomendations based on their accounts to predict how much per time perioud they should put towards that goal.
+
+Observation 5: 
+Observation Statement: Many people express confidence in their financial decision-making, yet a significant number do not actively track their spending.
+
+Supporting Data: 32 out of 63 respondents stated that they do not track their expenses, while 49.2% rated their financial confidence at 4 stars. This indicates a disconnect between perceived financial awareness and actual tracking habits.
+
+Team Action: In our business announcement, we should highlight how many people believe they are good with money but lack proper expense-tracking methods. This can emphasize the need for a solution that simplifies financial monitoring.
