@@ -1,0 +1,9 @@
+#Market place speech
+
+We picked 'Fine Wallet as an official market place template in FlutterFlow.
+Though we didn't copy it word for word, it did give us the main inspiration needed for a basic finance app.
+After taking inspiration from that, we made a template in figma based on a template figma mainly generated for us.
+The problems we ran into was whether our logo would fit into the borders of the app, what our color scheme would be,
+and how similar this would be to other financal apps. We resolved these problems by stcking to a theme,
+changing the UI ,and color scheme so it wouldn't be super similar to other  finance apps. The component made the work so easy
+we barely had to do anything that so time consuming. 
