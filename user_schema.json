@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "users": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uid": { "type": "string" },
+          "display_name": { "type": "string" },
+          "email": { "type": "string", "format": "email" },
+          "created_time": { "type": "string", "format": "date-time" },
+          "birthdate": { "type": "string", "format": "date-time" },
+          "monthly_budget": { "type": "number", "minimum": 0 }
+        },
+        "required": ["uid", "display_name", "email", "created_time"]
+      }
+    },
+  }
+}
