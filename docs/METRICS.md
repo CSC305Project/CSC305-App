@@ -10,3 +10,6 @@ Metric 2: CTR (Click Through Rate)
 
 Metric 3: Adoption
    - To track adoption a good technique for this is tracking the number of download we are getting compared to similar releases in the market space.
+
+Metric 4: Engagement
+   - Tracking the session length of each user is a good way to track how long users are using the app for per session. This can show us how engaged users are or if they are bored. Login frequency is a good way to track how many times users login per week. 
