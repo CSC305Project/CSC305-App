@@ -13,3 +13,14 @@ Metric 3: Adoption
 
 Metric 4: Engagement
    - Tracking the session length of each user is a good way to track how long users are using the app for per session. This can show us how engaged users are or if they are bored. Login frequency is a good way to track how many times users login per week. 
+
+Metric 5: Retention Rate
+
+Retention rate measures how many users continue to use the app over a given period. A common way to track this is by calculating the percentage of users who return to the app after a set timeframe. This helps assess long-term user satisfaction and product stickiness.
+
+
+
+
+
+
+
