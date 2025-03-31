@@ -60,6 +60,7 @@ Monitor and analyze performance over a two-week period.
 Determine statistical significance and user impact.
 Roll out the winning variation or iterate further based on insights.
 This A/B test aims to improve engagement and adoption by refining the user experience on the "GoalPage."
+
 ------------------------------------------------------------------------------
 -----------------Jack M---------------
 
