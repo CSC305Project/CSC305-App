@@ -89,14 +89,36 @@ Variations - In this section, describe what variations you would like to test. L
 -----------------------------------------------------------------------
 -----------------Noah V---------------
 
-A/B Test Name:  Make a meaningful name for the test. For example  "Signup/Sign In 1 screen or 2 screens", could be a title for an A/B test to determine if users prefer having account creation and login on a single screen, or two screens.
-User Story Number: For instance, the "Signup/Sign In 1 screen or 2 screens" A/B test would be a task under US1 (Account Creation). 
-Metrics:  Your team's HEART metrics that this A/B test measures.
+-----------------------------------------------------------------------
+-----------------Noah V---------------
+
+A/B Test Name:  Start user on login page vs. starting user on an app introduction page
+User Story Number: US6 
+Metrics: Test the click through rate/sign up rate for when we have a intro page vs without one.
 Hypothesis: State your hypothesis for this A/B test
-What problem are we trying to solve? Its impact? (e.g. how big this problem is to our customers?) In formulating the hypothesis, first you need to define the problem you want to solve. For example, you are an SaaS that offers free trial and you want to improve Adoption. But that problem might be too broad to form an A/B test as you can simply test one variable in an A/B test to be effective (otherwise you won’t know which variable is causing the change). So to narrow down the problem you want to solve, you need to find out the bottle-neck in the conversion funnel – where do people drop off the most? Are there any key information or call-to-action buttons that you expect people to read/click but they didn’t? 
-After narrowing down the problem you want to solve, you then need to make a hypothesis as to what causes those bottlenecks and what you can do to improve. For example, you noticed most of the visitors will visit your “Features” page but very few of them will actually scroll past even half of the page so many features that you think are important are not actually viewed by the visitors. To improve this, one hypothesis might be using tab or toggle list design to make your page shorter and visitors can select to dig deeper into content that they are interested in by expanding the content. Remember when formulating your hypothesis, change only one variable so that you will know it’s really that variable that is causing the change in conversion..
-Experiment - Detail out the experiment setup that you will use to test your hypothesis using Firebase capabilities. Describe the audiences – will all users be able to view the experiment? Or you will only allocate x% of your user base to the experiment? Lay out the details with the rationale behind this decision. Describe the tracking using Firebase Analytics. With your HEART metrics, what tracking needs to be set up? 
-Variations - In this section, describe what variations you would like to test. Layout the design work related and add diagrams, mockups and designs related to the confirmed variation that you’d like to test.
+Problem: We are trying to solve the problem of knwoing if people would rather just login to our app becuase they already know or trust our app based on the app store screenshots and description, or if we need to give them more info before having them create an account with us.
+Experiment: We will use Firebase A/B Testing to conduct a split test between two onboarding flows. The experiment will allocate users evenly with 50% seeing the control (direct login) and 50% seeing the variant (introduction page before login). We'll target 100% of new users who open the app for the first time to ensure sufficient sample size for statistical significance within 2 weeks. The experiment will run for 30 days or until we reach statistical significance at 95% confidence level, whichever comes first.
+For tracking, we'll implement Firebase Analytics events at key touchpoints:
+
+"app_open" - baseline tracking for all users
+"intro_page_viewed" (variant only)
+"intro_page_cta_clicked" (variant only)
+"login_page_viewed"
+"account_creation_started"
+"account_creation_completed"
+
+We'll create a funnel analysis to measure drop-off rates at each step and compare conversion rates between both variants using our primary HEART metrics: adoption (sign-up completion rate) and engagement (retention at day 1, 7, and 14).
+Variations:
+
+Control (Version A): Users open the app and are immediately directed to the login/signup screen with options to sign in with email, Google, or Apple accounts.
+Variant (Version B): Users are first shown a 3-slide introduction carousel highlighting key app features and benefits, with a prominent "Get Started" CTA button at the end that leads to the same login/signup screen as the control.
+
+Slide 1: App's primary value proposition with engaging imagery
+Slide 2: Key features demonstration with simple illustrations
+Slide 3: Trust indicators (user testimonials, ratings) with clear CTA
+
+The design will maintain consistent branding, color scheme, and UI elements between both variations, with the only difference being the presence or absence of the introduction screens.
+
 
 
 
