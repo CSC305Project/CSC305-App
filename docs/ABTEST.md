@@ -89,9 +89,6 @@ Variations - In this section, describe what variations you would like to test. L
 -----------------------------------------------------------------------
 -----------------Noah V---------------
 
------------------------------------------------------------------------
------------------Noah V---------------
-
 A/B Test Name:  Start user on login page vs. starting user on an app introduction page
 User Story Number: US6 
 Metrics: Test the click through rate/sign up rate for when we have a intro page vs without one.
