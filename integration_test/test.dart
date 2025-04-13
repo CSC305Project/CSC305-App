@@ -60,12 +60,13 @@ void main() async {
     await tester.pumpWidget(ChangeNotifierProvider(
       create: (context) => FFAppState(),
       child: MyApp(
-        entryPage: SignupLoginWidget(),
+        entryPage: HomeWidget(),
       ),
     ));
     await GoogleFonts.pendingFonts();
 
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.tap(find.byKey(const ValueKey('Row_e7hm')));
     await tester.tap(find.byKey(const ValueKey('Tab_jakp')));
     await tester.pump(kDoubleTapMinTime);
     await tester.tap(find.byKey(const ValueKey('Tab_jakp')));
@@ -104,6 +105,29 @@ void main() async {
     await tester.tap(find.text('Update'));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.tap(find.byKey(const ValueKey('IconButton_qogd')));
+  });
+
+  testWidgets('AI Agent', (WidgetTester tester) async {
+    _overrideOnError();
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'ronan@gmail.com', password: 'Temper@23');
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: AIinsightsWidget(),
+      ),
+    ));
+    await GoogleFonts.pendingFonts();
+
+    await tester.enterText(find.byKey(const ValueKey('TextField_3z5q')),
+        'Would buying a laptop be smart with rent due?');
+    await tester.tap(find.byKey(const ValueKey('Button_923q')));
+    await tester.pumpAndSettle(
+      const Duration(milliseconds: 5000),
+      EnginePhase.sendSemanticsUpdate,
+      const Duration(milliseconds: 10000),
+    );
+    expect(find.byKey(const ValueKey('Column_09u7')), findsOneWidget);
   });
 }
 

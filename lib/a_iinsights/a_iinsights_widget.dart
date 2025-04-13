@@ -85,60 +85,60 @@ class _AIinsightsWidgetState extends State<AIinsightsWidget> {
                             ),
                             child: Padding(
                               padding: EdgeInsets.all(16.0),
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 12.0),
-                                      child: Text(
-                                        'AI Response',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                      ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 12.0),
+                                    child: Text(
+                                      'AI Response',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                          ),
                                     ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsets.all(16.0),
-                                        child: Container(
-                                          width: double.infinity,
-                                          constraints: BoxConstraints(
-                                            minHeight: 500.0,
-                                          ),
-                                          decoration: BoxDecoration(
-                                            color: Color(0x4CB8B0F2),
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                          ),
-                                          child: Padding(
-                                            padding: EdgeInsets.all(8.0),
-                                            child: Text(
-                                              _model.apiResponse,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsets.all(16.0),
+                                      child: Container(
+                                        width: double.infinity,
+                                        constraints: BoxConstraints(
+                                          minHeight: 350.0,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: Color(0x4CB8B0F2),
+                                          borderRadius:
+                                              BorderRadius.circular(16.0),
+                                        ),
+                                        child: SingleChildScrollView(
+                                          key: ValueKey('Column_09u7'),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                _model.apiResponse,
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -186,6 +186,7 @@ class _AIinsightsWidgetState extends State<AIinsightsWidget> {
                                 Container(
                                   width: double.infinity,
                                   child: TextFormField(
+                                    key: ValueKey('TextField_3z5q'),
                                     controller: _model.textController,
                                     focusNode: _model.textFieldFocusNode,
                                     autofocus: false,
@@ -272,6 +273,7 @@ class _AIinsightsWidgetState extends State<AIinsightsWidget> {
                                         alignment:
                                             AlignmentDirectional(0.0, 0.0),
                                         child: FFButtonWidget(
+                                          key: ValueKey('Button_923q'),
                                           onPressed: () async {
                                             logFirebaseEvent(
                                                 'A_IINSIGHTS_PAGE_GENERATE_BTN_ON_TAP');
