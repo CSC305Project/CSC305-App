@@ -76,7 +76,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                       alignment: AlignmentDirectional(-1.0, -1.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.max,

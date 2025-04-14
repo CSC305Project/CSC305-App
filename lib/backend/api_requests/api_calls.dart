@@ -40,13 +40,17 @@ class GeminiAICall {
 }
 
 class FinanceEllaCall {
-  static Future<ApiCallResponse> call() async {
+  static Future<ApiCallResponse> call({
+    String? message = '',
+  }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'FinanceElla',
       apiUrl: 'https://us-central1-csc305-app.cloudfunctions.net/financeElla',
       callType: ApiCallType.GET,
       headers: {},
-      params: {},
+      params: {
+        'aimessage': message,
+      },
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,

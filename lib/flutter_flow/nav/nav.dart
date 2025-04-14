@@ -148,6 +148,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: OnboardingWidget.routeName,
           path: OnboardingWidget.routePath,
           builder: (context, params) => OnboardingWidget(),
+        ),
+        FFRoute(
+          name: EditGoalWidget.routeName,
+          path: EditGoalWidget.routePath,
+          builder: (context, params) => EditGoalWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

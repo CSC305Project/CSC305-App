@@ -483,6 +483,10 @@ class _AddPurchaseWidgetState extends State<AddPurchaseWidget> {
                                     description:
                                         _model.noteInputTextController.text,
                                     createdTime: getCurrentTimestamp,
+                                    purchaseName: _model
+                                        .purchaseNameInputTextController.text,
+                                    purchaseAmount: double.tryParse(_model
+                                        .purchaseAMTInputTextController.text),
                                   ));
                               logFirebaseEvent(
                                   'addPurchaseButton_firestore_query');

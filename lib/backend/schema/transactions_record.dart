@@ -40,12 +40,24 @@ class TransactionsRecord extends FirestoreRecord {
   DateTime? get createdTime => _createdTime;
   bool hasCreatedTime() => _createdTime != null;
 
+  // "purchaseName" field.
+  String? _purchaseName;
+  String get purchaseName => _purchaseName ?? '';
+  bool hasPurchaseName() => _purchaseName != null;
+
+  // "purchaseAmount" field.
+  double? _purchaseAmount;
+  double get purchaseAmount => _purchaseAmount ?? 0.0;
+  bool hasPurchaseAmount() => _purchaseAmount != null;
+
   void _initializeFields() {
     _transactionId = snapshotData['transaction_id'] as String?;
     _user = snapshotData['user'] as DocumentReference?;
     _amount = castToType<double>(snapshotData['amount']);
     _description = snapshotData['description'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
+    _purchaseName = snapshotData['purchaseName'] as String?;
+    _purchaseAmount = castToType<double>(snapshotData['purchaseAmount']);
   }
 
   static CollectionReference get collection =>
@@ -88,6 +100,8 @@ Map<String, dynamic> createTransactionsRecordData({
   double? amount,
   String? description,
   DateTime? createdTime,
+  String? purchaseName,
+  double? purchaseAmount,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -96,6 +110,8 @@ Map<String, dynamic> createTransactionsRecordData({
       'amount': amount,
       'description': description,
       'created_time': createdTime,
+      'purchaseName': purchaseName,
+      'purchaseAmount': purchaseAmount,
     }.withoutNulls,
   );
 
@@ -112,12 +128,21 @@ class TransactionsRecordDocumentEquality
         e1?.user == e2?.user &&
         e1?.amount == e2?.amount &&
         e1?.description == e2?.description &&
-        e1?.createdTime == e2?.createdTime;
+        e1?.createdTime == e2?.createdTime &&
+        e1?.purchaseName == e2?.purchaseName &&
+        e1?.purchaseAmount == e2?.purchaseAmount;
   }
 
   @override
-  int hash(TransactionsRecord? e) => const ListEquality().hash(
-      [e?.transactionId, e?.user, e?.amount, e?.description, e?.createdTime]);
+  int hash(TransactionsRecord? e) => const ListEquality().hash([
+        e?.transactionId,
+        e?.user,
+        e?.amount,
+        e?.description,
+        e?.createdTime,
+        e?.purchaseName,
+        e?.purchaseAmount
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is TransactionsRecord;

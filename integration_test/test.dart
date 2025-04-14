@@ -99,12 +99,12 @@ void main() async {
     await tester.tap(find.byKey(const ValueKey('Button_z99z')));
     await tester.tap(find.text('Completed'));
     await tester.tap(find.text('Not Started'));
-    await tester.tap(find.byKey(const ValueKey('IconButton_3pea')));
+    await tester.tap(find.byKey(const ValueKey('UNDEFINED')));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(find.text('Spend less'), 'Save more/spend less');
     await tester.tap(find.text('Update'));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    await tester.tap(find.byKey(const ValueKey('IconButton_qogd')));
+    await tester.tap(find.byKey(const ValueKey('UNDEFINED')));
   });
 
   testWidgets('AI Agent', (WidgetTester tester) async {
@@ -128,6 +128,21 @@ void main() async {
       const Duration(milliseconds: 10000),
     );
     expect(find.byKey(const ValueKey('Column_09u7')), findsOneWidget);
+  });
+
+  testWidgets('Testing Survey', (WidgetTester tester) async {
+    _overrideOnError();
+
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: const MyApp(),
+    ));
+    await GoogleFonts.pendingFonts();
+
+    await tester.tap(find.byKey(const ValueKey('Button10_8vdc')));
+    await tester.enterText(find.byKey(const ValueKey('TextField_2c72')),
+        'I would recommend this app');
+    await tester.tap(find.byKey(const ValueKey('Submit_8j8o')));
   });
 }
 

@@ -559,6 +559,8 @@ class _NPSSurveyPageWidgetState extends State<NPSSurveyPageWidget> {
                                                   ),
                                                 ),
                                                 FFButtonWidget(
+                                                  key:
+                                                      ValueKey('Button10_8vdc'),
                                                   onPressed: () async {
                                                     logFirebaseEvent(
                                                         'N_P_S_SURVEY_PAGE_PAGE_Button10_ON_TAP');
@@ -641,6 +643,7 @@ class _NPSSurveyPageWidgetState extends State<NPSSurveyPageWidget> {
                                               ),
                                         ),
                                         TextFormField(
+                                          key: ValueKey('TextField_2c72'),
                                           controller: _model.textController,
                                           focusNode: _model.textFieldFocusNode,
                                           autofocus: false,
@@ -726,6 +729,7 @@ class _NPSSurveyPageWidgetState extends State<NPSSurveyPageWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 24.0),
                       child: FFButtonWidget(
+                        key: ValueKey('Submit_8j8o'),
                         onPressed: () async {
                           logFirebaseEvent(
                               'N_P_S_SURVEY_PAGE_PAGE_Submit_ON_TAP');

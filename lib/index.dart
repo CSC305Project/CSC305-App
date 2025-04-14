@@ -9,3 +9,4 @@ export '/profile/profile_widget.dart' show ProfileWidget;
 export '/a_iinsights/a_iinsights_widget.dart' show AIinsightsWidget;
 export '/bank_dashboard/bank_dashboard_widget.dart' show BankDashboardWidget;
 export '/onboarding/onboarding_widget.dart' show OnboardingWidget;
+export '/edit_goal/edit_goal_widget.dart' show EditGoalWidget;
