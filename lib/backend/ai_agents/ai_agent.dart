@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'firebase_vertexai_agent.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'ai_agent_cloud_function_call.dart';
 
 /// Calls an AI agent and manages the conversation thread.
 ///
@@ -13,6 +12,8 @@ import 'ai_agent_cloud_function_call.dart';
 /// * [audioAsset] - An uploaded audio file to send to the agent (optional).
 /// * [videoUrl] - A URL to a video to send to the agent (optional).
 /// * [videoAsset] - An uploaded video file to send to the agent (optional).
+/// * [pdfUrl] - Optional URL of a PDF to include in the message.
+/// * [pdfAsset] - Optional PDF file to include in the message.
 /// * [threadId] - A local identifier for the conversation thread.
 /// * [agentCloudFunctionName] - The name of the cloud function to call for the agent.
 /// * [provider] - The AI provider (e.g. 'OPENAI', 'GOOGLE').
@@ -32,6 +33,8 @@ Future<dynamic> callAiAgent({
   FFUploadedFile? audioAsset,
   String? videoUrl,
   FFUploadedFile? videoAsset,
+  String? pdfUrl,
+  FFUploadedFile? pdfAsset,
   required String threadId,
   required String agentCloudFunctionName,
   required String provider,
@@ -40,26 +43,25 @@ Future<dynamic> callAiAgent({
 }) async {
   try {
     switch (provider) {
-      case 'OPENAI':
-      case 'ANTHROPIC':
-        final response = await callCloudAgent(
-          context: context,
-          agentName: agentCloudFunctionName,
-          message: prompt,
-          threadId: threadId,
-          provider: provider,
+      case 'GOOGLE':
+        if (agentJson == null) {
+          throw Exception('Agent configuration required for Google AI');
+        }
+        final parsedJson = jsonDecode(agentJson) as Map<String, dynamic>;
+        return await ChatManager().sendMessage(
+          prompt,
+          threadId,
+          parsedJson,
           imageUrl: imageUrl,
+          imageAsset: imageAsset,
+          audioUrl: audioUrl,
+          audioAsset: audioAsset,
+          videoUrl: videoUrl,
+          videoAsset: videoAsset,
+          pdfUrl: pdfUrl,
+          pdfAsset: pdfAsset,
         );
 
-        if (response != null && responseType == 'JSON') {
-          try {
-            return jsonDecode(response) as Map<String, dynamic>;
-          } catch (e) {
-            print('Failed to parse JSON response: $response');
-            throw Exception('AI response was not valid JSON');
-          }
-        }
-        return response;
       default:
         showSnackbar(
           context,
@@ -78,10 +80,10 @@ Future<dynamic> callAiAgent({
 
 void clearAiChat(String threadId, String provider) {
   switch (provider) {
-    case 'OPENAI':
-    case 'ANTHROPIC':
-      ThreadManager.clearThread(provider, threadId);
+    case 'GOOGLE':
+      ChatManager().clearChat(threadId);
       break;
+
     default:
       // Handle other providers if needed
       break;

@@ -1,16 +1,15 @@
-import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'add_purchase_widget.dart' show AddPurchaseWidget;
 import 'package:flutter/material.dart';
 
 class AddPurchaseModel extends FlutterFlowModel<AddPurchaseWidget> {
-  ///  Local state fields for this component.
-  /// sends out response to AI AGent
-  String? newAgent;
-
   ///  State fields for stateful widgets in this component.
 
+  // State field(s) for category widget.
+  String? categoryValue;
+  FormFieldController<String>? categoryValueController;
   // State field(s) for PurchaseNameInput widget.
   FocusNode? purchaseNameInputFocusNode;
   TextEditingController? purchaseNameInputTextController;
@@ -21,8 +20,6 @@ class AddPurchaseModel extends FlutterFlowModel<AddPurchaseWidget> {
   TextEditingController? purchaseAMTInputTextController;
   String? Function(BuildContext, String?)?
       purchaseAMTInputTextControllerValidator;
-  // Stores action output result for [Backend Call - API (FinanceElla)] action in PurchaseAMTInput widget.
-  ApiCallResponse? apiResultlen;
   // State field(s) for noteInput widget.
   FocusNode? noteInputFocusNode;
   TextEditingController? noteInputTextController;

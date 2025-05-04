@@ -50,6 +50,11 @@ class TransactionsRecord extends FirestoreRecord {
   double get purchaseAmount => _purchaseAmount ?? 0.0;
   bool hasPurchaseAmount() => _purchaseAmount != null;
 
+  // "category" field.
+  String? _category;
+  String get category => _category ?? '';
+  bool hasCategory() => _category != null;
+
   void _initializeFields() {
     _transactionId = snapshotData['transaction_id'] as String?;
     _user = snapshotData['user'] as DocumentReference?;
@@ -58,6 +63,7 @@ class TransactionsRecord extends FirestoreRecord {
     _createdTime = snapshotData['created_time'] as DateTime?;
     _purchaseName = snapshotData['purchaseName'] as String?;
     _purchaseAmount = castToType<double>(snapshotData['purchaseAmount']);
+    _category = snapshotData['category'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -102,6 +108,7 @@ Map<String, dynamic> createTransactionsRecordData({
   DateTime? createdTime,
   String? purchaseName,
   double? purchaseAmount,
+  String? category,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -112,6 +119,7 @@ Map<String, dynamic> createTransactionsRecordData({
       'created_time': createdTime,
       'purchaseName': purchaseName,
       'purchaseAmount': purchaseAmount,
+      'category': category,
     }.withoutNulls,
   );
 
@@ -130,7 +138,8 @@ class TransactionsRecordDocumentEquality
         e1?.description == e2?.description &&
         e1?.createdTime == e2?.createdTime &&
         e1?.purchaseName == e2?.purchaseName &&
-        e1?.purchaseAmount == e2?.purchaseAmount;
+        e1?.purchaseAmount == e2?.purchaseAmount &&
+        e1?.category == e2?.category;
   }
 
   @override
@@ -141,7 +150,8 @@ class TransactionsRecordDocumentEquality
         e?.description,
         e?.createdTime,
         e?.purchaseName,
-        e?.purchaseAmount
+        e?.purchaseAmount,
+        e?.category
       ]);
 
   @override

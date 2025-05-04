@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
@@ -37,28 +38,6 @@ class GeminiAICall {
         response,
         r'''$.response_text''',
       ));
-}
-
-class FinanceEllaCall {
-  static Future<ApiCallResponse> call({
-    String? message = '',
-  }) async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'FinanceElla',
-      apiUrl: 'https://us-central1-csc305-app.cloudfunctions.net/financeElla',
-      callType: ApiCallType.GET,
-      headers: {},
-      params: {
-        'aimessage': message,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
 }
 
 class ApiPagingParams {

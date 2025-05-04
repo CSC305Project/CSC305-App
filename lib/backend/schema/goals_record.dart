@@ -25,21 +25,27 @@ class GoalsRecord extends FirestoreRecord {
   String get details => _details ?? '';
   bool hasDetails() => _details != null;
 
-  // "monthlyBudget" field.
-  double? _monthlyBudget;
-  double get monthlyBudget => _monthlyBudget ?? 0.0;
-  bool hasMonthlyBudget() => _monthlyBudget != null;
-
   // "user" field.
   DocumentReference? _user;
   DocumentReference? get user => _user;
   bool hasUser() => _user != null;
 
+  // "date" field.
+  DateTime? _date;
+  DateTime? get date => _date;
+  bool hasDate() => _date != null;
+
+  // "category" field.
+  String? _category;
+  String get category => _category ?? '';
+  bool hasCategory() => _category != null;
+
   void _initializeFields() {
     _title = snapshotData['title'] as String?;
     _details = snapshotData['details'] as String?;
-    _monthlyBudget = castToType<double>(snapshotData['monthlyBudget']);
     _user = snapshotData['user'] as DocumentReference?;
+    _date = snapshotData['date'] as DateTime?;
+    _category = snapshotData['category'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -78,15 +84,17 @@ class GoalsRecord extends FirestoreRecord {
 Map<String, dynamic> createGoalsRecordData({
   String? title,
   String? details,
-  double? monthlyBudget,
   DocumentReference? user,
+  DateTime? date,
+  String? category,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'title': title,
       'details': details,
-      'monthlyBudget': monthlyBudget,
       'user': user,
+      'date': date,
+      'category': category,
     }.withoutNulls,
   );
 
@@ -100,13 +108,14 @@ class GoalsRecordDocumentEquality implements Equality<GoalsRecord> {
   bool equals(GoalsRecord? e1, GoalsRecord? e2) {
     return e1?.title == e2?.title &&
         e1?.details == e2?.details &&
-        e1?.monthlyBudget == e2?.monthlyBudget &&
-        e1?.user == e2?.user;
+        e1?.user == e2?.user &&
+        e1?.date == e2?.date &&
+        e1?.category == e2?.category;
   }
 
   @override
   int hash(GoalsRecord? e) => const ListEquality()
-      .hash([e?.title, e?.details, e?.monthlyBudget, e?.user]);
+      .hash([e?.title, e?.details, e?.user, e?.date, e?.category]);
 
   @override
   bool isValidKey(Object? o) => o is GoalsRecord;

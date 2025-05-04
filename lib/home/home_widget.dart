@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'home_model.dart';
 export 'home_model.dart';
 
@@ -96,37 +97,61 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Colors.black,
+        backgroundColor: FlutterFlowTheme.of(context).info,
         body: SafeArea(
           top: true,
           child: Row(
             mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Column(
                 mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
-                      'assets/images/Screenshot_2025-04-07_at_11.00.06_AM.png',
-                      width: 390.0,
-                      height: 475.0,
+                      'assets/images/Screenshot_2025-04-15_at_10.27.56_AM.png',
+                      width: 393.0,
+                      height: 285.5,
                       fit: BoxFit.cover,
                       alignment: Alignment(0.0, -1.0),
                     ),
                   ).animateOnPageLoad(
                       animationsMap['imageOnPageLoadAnimation']!),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 120.0),
+                    child: Text(
+                      'Welcome to CheckMate!\n\nBegin your savings journey\nby logging in, continue below',
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            font: GoogleFonts.notoSansJp(
+                              fontWeight: FontWeight.w500,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                            ),
+                            fontSize: 24.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.w500,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
+                    ),
+                  ),
                   Align(
                     alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 56.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                       child: Container(
-                        width: 273.5,
-                        height: 83.96,
+                        width: 80.0,
+                        height: 80.0,
                         decoration: BoxDecoration(
-                          color: Color(0xFFFFE9C5),
-                          borderRadius: BorderRadius.circular(18.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          borderRadius: BorderRadius.circular(50.0),
                         ),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -142,19 +167,16 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           child: Row(
                             key: ValueKey('Row_e7hm'),
                             mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Expanded(
                                 child: Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 85.0),
-                                    child: Icon(
-                                      Icons.arrow_right_alt,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 80.0,
-                                    ),
+                                  child: Icon(
+                                    Icons.arrow_circle_right_outlined,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    size: 45.0,
                                   ),
                                 ),
                               ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:integration_test/integration_test.dart';
+import 'package:c_s_c305_project/flutter_flow/flutter_flow_drop_down.dart';
 import 'package:c_s_c305_project/flutter_flow/flutter_flow_icon_button.dart';
 import 'package:c_s_c305_project/flutter_flow/flutter_flow_widgets.dart';
 import 'package:c_s_c305_project/flutter_flow/flutter_flow_theme.dart';
@@ -96,7 +97,7 @@ void main() async {
     await tester.enterText(find.text('Goal'), 'Save money/less spending');
     await tester.tap(find.text('Done'));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    await tester.tap(find.byKey(const ValueKey('Button_z99z')));
+    await tester.tap(find.byKey(const ValueKey('UNDEFINED')));
     await tester.tap(find.text('Completed'));
     await tester.tap(find.text('Not Started'));
     await tester.tap(find.byKey(const ValueKey('UNDEFINED')));
@@ -127,7 +128,7 @@ void main() async {
       EnginePhase.sendSemanticsUpdate,
       const Duration(milliseconds: 10000),
     );
-    expect(find.byKey(const ValueKey('Column_09u7')), findsOneWidget);
+    expect(find.byKey(const ValueKey('UNDEFINED')), findsOneWidget);
   });
 
   testWidgets('Testing Survey', (WidgetTester tester) async {
