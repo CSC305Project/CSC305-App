@@ -127,7 +127,6 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Card(
-                                  key: ValueKey('Card_k7rc'),
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
                                   color: FlutterFlowTheme.of(context).primary,
                                   shape: RoundedRectangleBorder(
@@ -188,6 +187,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
+                                          key: ValueKey('Text_3pnz'),
                                           'Welcome!',
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
