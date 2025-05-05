@@ -3,6 +3,4 @@
 [link to slide](https://docs.google.com/presentation/d/1zYtoicZOrmCvesAQ5hKDGA2m2LGAuiTCBzNQ3YuTO3o/edit?usp=sharing) US3: Backend Management
 <link to template slide> US4: SURVEY 
 [https://docs.google.com/presentation/d/1Y6nyKK1_i8I-fr3mGzuOaJ1AGzvL2HcjUHB_zMA9KTs/edit?usp=sharing]
-
-
 (https://docs.google.com/presentation/d/1nfP4zpqXmbnqrxVlPZ8qTGPc6AySU5RMl67w-WIqtP4/edit?usp=sharing) US5: Interact with AI
