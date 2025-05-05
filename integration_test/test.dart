@@ -56,6 +56,24 @@ void main() async {
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
   });
 
+  testWidgets('Testing Survey', (WidgetTester tester) async {
+    _overrideOnError();
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'ndoumben1234@gmail.com', password: 'dd4ldd4l');
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: NPSSurveyPageWidget(),
+      ),
+    ));
+    await GoogleFonts.pendingFonts();
+
+    await tester.tap(find.byKey(const ValueKey('Button10_8vdc')));
+    await tester.enterText(find.byKey(const ValueKey('TextField_2c72')),
+        'I would recommend this app');
+    await tester.tap(find.byKey(const ValueKey('Submit_8j8o')));
+  });
+
   testWidgets('testUserLogin', (WidgetTester tester) async {
     _overrideOnError();
 
@@ -136,21 +154,6 @@ void main() async {
       const Duration(milliseconds: 10000),
     );
     expect(find.byKey(const ValueKey('UNDEFINED')), findsOneWidget);
-  });
-
-  testWidgets('Testing Survey', (WidgetTester tester) async {
-    _overrideOnError();
-
-    await tester.pumpWidget(ChangeNotifierProvider(
-      create: (context) => FFAppState(),
-      child: const MyApp(),
-    ));
-    await GoogleFonts.pendingFonts();
-
-    await tester.tap(find.byKey(const ValueKey('Button10_8vdc')));
-    await tester.enterText(find.byKey(const ValueKey('TextField_2c72')),
-        'I would recommend this app');
-    await tester.tap(find.byKey(const ValueKey('Submit_8j8o')));
   });
 }
 
