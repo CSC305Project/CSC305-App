@@ -11,14 +11,16 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <h1>Checkmate</h1>
+            <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+                <img src="./src/checkmate.png" alt="Checkmate Logo">
+                <h1 style="margin: 0;">Checkmate</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#benefits">Benefits</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#download">Download</a></li>
+                <li><a href="https://github.com/CSC305Project/CSC305-App/wiki/UX-Flow#ux-flow">Documentation</a></li>
             </ul>
             <div class="cta-button">
                 <a href="#download" class="btn-primary">Get Started</a>
@@ -28,17 +30,34 @@
             <div class="hero-content">
                 <h1>Take Control of Your Finances</h1>
                 <p>Introducing Checkmate—your smart finance ally! Get AI-driven money-saving tips & make smarter financial decisions.</p>
-                <img src="./src/checkmate.png" alt="Checkmate Logo" style="width: 150px;">
-
+                
+                <p>Our app is currently in a closed beta, but you cna try a web version here -></p>
                 <div class="hero-cta">
-                    <a href="#download" class="btn-primary">Download Beta</a>
-                    <a href="#features" class="btn-secondary">Learn More</a>
+                    <a href="#download" class="btn-primary">Try Now!</a>
+                    <a href="#features" class="btn-secondary">Learn More - Documentation</a>
                 </div>
 
             </div>
-            <div class="hero-image">
-                <img src="https://placehold.co/600x800/3498db/FFFFFF/png?text=Checkmate+App" alt="Checkmate App Screenshot">
-            </div>
+            <div class="hero-image-carousel">
+                <div class="carousel-images">
+                    <img src="./src/dash.png" alt="Checkmate App Screenshot 1" class="carousel-img active">
+                    <img src="./src/login.png" alt="Checkmate App Screenshot 2" class="carousel-img">
+                    <img src="./src/create_goal.png" alt="Checkmate App Screenshot 3" class="carousel-img">
+                    <img src="./src/goals.png" alt="Checkmate App Screenshot 4" class="carousel-img">
+                    <img src="./src/ai.png" alt="Checkmate App Screenshot 5" class="carousel-img">
+                    <img src="./src/history.png" alt="Checkmate App Screenshot 6" class="carousel-img">
+                </div>
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+                <div class="carousel-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                    <span class="dot" data-index="4"></span>
+                    <span class="dot" data-index="5"></span>
+                </div>
+            </div>    
         </div>
     </header>
 
@@ -156,6 +175,26 @@
                 </div>
                 <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
             </div>
+        </div>
+    </section>
+
+    <section id="try-app" class="try-app">
+        <div class="section-header">
+            <h2>Try Checkmate Now</h2>
+            <p>Experience the app directly on your browser. Click below to try it out!</p>
+        </div>
+        <div class="app-embed" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <div style="background: #222; padding: 24px 12px; border-radius: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.15); display: flex; justify-content: center; align-items: center;">
+                <iframe 
+                    src="https://c-s-c305-project-h8eymz.flutterflow.app/" 
+                    width="375" 
+                    height="812" 
+                    style="border:none; border-radius: 24px; background: #fff; box-shadow: 0 2px 16px rgba(0,0,0,0.10);"
+                    title="Checkmate App Preview"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p style="margin-top: 12px; color: #888; font-size: 0.95em;">iPhone 12 Pro viewport (375 × 812 px)</p>
         </div>
     </section>
 

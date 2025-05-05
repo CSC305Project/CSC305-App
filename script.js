@@ -146,3 +146,38 @@ document.addEventListener('DOMContentLoaded', function() {
     floatAnimation();
   }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.hero-image-carousel .carousel-img');
+  const dots = document.querySelectorAll('.hero-image-carousel .dot');
+  const prevBtn = document.querySelector('.hero-image-carousel .prev');
+  const nextBtn = document.querySelector('.hero-image-carousel .next');
+  let current = 0;
+
+  function showImage(idx) {
+      images.forEach((img, i) => {
+          img.classList.toggle('active', i === idx);
+      });
+      dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === idx);
+      });
+      current = idx;
+  }
+
+  prevBtn.addEventListener('click', () => {
+      showImage((current - 1 + images.length) % images.length);
+  });
+
+  nextBtn.addEventListener('click', () => {
+      showImage((current + 1) % images.length);
+  });
+
+  dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+          showImage(Number(dot.dataset.index));
+      });
+  });
+
+  // Optional: auto-advance every 5 seconds
+  // setInterval(() => nextBtn.click(), 5000);
+});
