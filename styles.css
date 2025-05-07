@@ -602,17 +602,17 @@ footer {
   max-width: 100%;
   margin: 0 auto;
 }
+
 .carousel-images {
   position: relative;
   width: 100%;
-  height: auto; /* Allow height to adjust dynamically */
-  overflow: hidden;
+  height: 600px; /* Fixed height to prevent jumping */
+  overflow: visible;
 }
+
 .carousel-img {
-  display: none;
   width: 100%;
-  height: auto; /* Ensure the image is fully visible */
-  object-fit: contain; /* Adjust to ensure the entire image is shown */
+  max-height: 600px;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   position: absolute;
@@ -621,12 +621,15 @@ footer {
   transition: opacity 0.4s;
   opacity: 0;
   z-index: 1;
+  display: none;
 }
+
 .carousel-img.active {
   display: block;
   opacity: 1;
   z-index: 2;
 }
+
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -642,19 +645,24 @@ footer {
   z-index: 3;
   transition: background 0.2s;
 }
+
 .carousel-btn:hover {
   background: #f0f0f0;
 }
+
 .carousel-btn.prev {
-  left: 8px;
+  left: -20px;
 }
+
 .carousel-btn.next {
-  right: 8px;
+  right: -20px;
 }
+
 .carousel-dots {
   text-align: center;
   margin-top: 12px;
 }
+
 .carousel-dots .dot {
   display: inline-block;
   width: 10px;
@@ -665,17 +673,29 @@ footer {
   cursor: pointer;
   transition: background 0.2s;
 }
+
 .carousel-dots .dot.active {
   background: #3498db;
 }
+
 @media (max-width: 600px) {
-  .carousel-images {
-    height: auto; /* Adjust height dynamically for smaller screens */
-  }
-  .carousel-img {
-    height: auto; /* Ensure the image is fully visible on smaller screens */
-  }
   .hero-image-carousel {
     width: 100%;
+  }
+  
+  .carousel-images {
+    height: 450px; /* Smaller height on mobile */
+  }
+  
+  .carousel-img {
+    max-height: 450px;
+  }
+  
+  .carousel-btn.prev {
+    left: 5px;
+  }
+  
+  .carousel-btn.next {
+    right: 5px;
   }
 }
